@@ -7,6 +7,7 @@
 //
 
 #import "MDSegmentView.h"
+#import "NSString+MDAdditional.h"
 
 @interface MDSegmentView ()
 
@@ -20,6 +21,8 @@
     if (self = [super initWithFrame:frame]) {
         [self addSubview:self.contentView];
         [self.contentView addSubview:self.collectionView];
+        
+        [self initData];
     }
     return self;
 }
@@ -28,6 +31,25 @@
     self.contentView.frame = self.bounds;
     self.collectionView.frame = self.contentView.bounds;
 }
+#pragma mark 初始化数据
+-(void)initData {
+    
+    _itemWidth               = 50;
+    _lineWidth               = 50;
+    _innerSpace              = 0;
+    _normalFontSize          = 12;
+    _selectedFontSize        = 14;
+    _normalTitleColor        = [UIColor blackColor];
+    _selectedTitleColor      = [UIColor redColor];
+    _normalBackgroundColor   = [UIColor clearColor];
+    _selectedBackgroundColor = [UIColor clearColor];
+    _backgroundColor         = [UIColor whiteColor];
+    
+}
+-(void)refreshUI {
+    
+}
+
 #pragma mark public
 -(void)setSelectedIndex:(NSInteger)index {
     NSLog(@"选中，位移");
@@ -50,6 +72,7 @@
         [_collectionView registerClass:[MDSegmentViewCell class] forCellWithReuseIdentifier:@"MDSegmentViewCell"];
         _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.showsHorizontalScrollIndicator = NO;
+        _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     return _collectionView;
 }
@@ -61,6 +84,7 @@
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     MDSegmentViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MDSegmentViewCell" forIndexPath:indexPath];
+    cell.contentView.backgroundColor = [UIColor yellowColor];
     cell.titleLabel.text = self.items[indexPath.row];
     return cell;
 }
@@ -74,9 +98,11 @@
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat width = collectionView.frame.size.width / self.items.count * 1.0;
     CGFloat height = self.frame.size.height;
-    return CGSizeMake(width, height);
+    return CGSizeMake(self.itemWidth, height);
+}
+-(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return self.innerSpace;
 }
 @end
 

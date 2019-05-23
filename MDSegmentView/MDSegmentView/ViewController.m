@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MDSegmentView.h"
+#import "NSString+MDAdditional.h"
 
 #define SCREENSIZE  [UIScreen mainScreen].bounds.size
 
@@ -23,6 +24,11 @@
     [super viewDidLoad];
     self.segmentView.items = @[@"韩信",@"刘邦",@"项羽"];
     [self.view addSubview:self.segmentView];
+    
+    _segmentView.itemWidth = 100;
+
+    
+    
 }
 -(MDSegmentView *)segmentView {
     if (!_segmentView) {
@@ -30,5 +36,4 @@
     }
     return _segmentView;
 }
-
 @end

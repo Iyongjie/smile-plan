@@ -14,6 +14,7 @@
 		D46DFD212295A6FE00D98880 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D46DFD1F2295A6FE00D98880 /* LaunchScreen.storyboard */; };
 		D46DFD242295A6FE00D98880 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D46DFD232295A6FE00D98880 /* main.m */; };
 		D46DFD2C2295A71400D98880 /* MDSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D46DFD2B2295A71400D98880 /* MDSegmentView.m */; };
+		D4AD46012296F98E0022762E /* NSString+MDAdditional.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AD46002296F98E0022762E /* NSString+MDAdditional.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		D46DFD232295A6FE00D98880 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D46DFD2A2295A71400D98880 /* MDSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSegmentView.h; sourceTree = "<group>"; };
 		D46DFD2B2295A71400D98880 /* MDSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDSegmentView.m; sourceTree = "<group>"; };
+		D4AD45FF2296F98E0022762E /* NSString+MDAdditional.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MDAdditional.h"; sourceTree = "<group>"; };
+		D4AD46002296F98E0022762E /* NSString+MDAdditional.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+MDAdditional.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				D46DFD182295A6FC00D98880 /* ViewController.m */,
 				D46DFD2A2295A71400D98880 /* MDSegmentView.h */,
 				D46DFD2B2295A71400D98880 /* MDSegmentView.m */,
+				D4AD45FF2296F98E0022762E /* NSString+MDAdditional.h */,
+				D4AD46002296F98E0022762E /* NSString+MDAdditional.m */,
 				D46DFD1A2295A6FC00D98880 /* Main.storyboard */,
 				D46DFD1D2295A6FE00D98880 /* Assets.xcassets */,
 				D46DFD1F2295A6FE00D98880 /* LaunchScreen.storyboard */,
@@ -147,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D46DFD192295A6FC00D98880 /* ViewController.m in Sources */,
+				D4AD46012296F98E0022762E /* NSString+MDAdditional.m in Sources */,
 				D46DFD2C2295A71400D98880 /* MDSegmentView.m in Sources */,
 				D46DFD242295A6FE00D98880 /* main.m in Sources */,
 				D46DFD162295A6FC00D98880 /* AppDelegate.m in Sources */,
